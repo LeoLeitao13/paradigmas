@@ -1,21 +1,25 @@
-Exercícios – Capítulo 9: Subprogramas
-Exercício 1 – Passagem de Parâmetros por Valor e por Referência
+# Exercícios – Capítulo 9: Subprogramas
+
+## Exercício 1 – Passagem de Parâmetros por Valor e por Referência
+
 Considere o seguinte pseudocódigo de uma função que tenta dobrar o valor de um número:
 
-Plaintext
-
+```text
 procedure dobrar(x)
     x := x * 2
 end
-1. Implementação em C
-Implementação do subprograma em C de duas maneiras: a primeira recebendo o parâmetro por valor e a segunda por referência (usando ponteiros).
+```
 
-2. Programa Principal
+### 1. Implementação em C
+
+Implementação do subprograma em **C** de duas maneiras: a primeira recebendo o parâmetro **por valor** e a segunda **por referência** (usando ponteiros).
+
+### 2. Programa Principal
+
 O código abaixo contém as duas versões da função e o programa principal que as executa para demonstrar a diferença.
 
-Código Completo (main.c)
-C
-
+#### Código Completo (`main.c`)
+```c
 #include <stdio.h>
 
 // Versão 1: Recebendo o parâmetro POR VALOR
@@ -52,9 +56,10 @@ int main() {
 
     return 0;
 }
-Saída Esperada
-Shell
+```
 
+#### Saída Esperada
+```console
 Valor inicial da variável 'numero': 10
 
 ----------------------------------------
@@ -70,19 +75,19 @@ Chamando dobrarPorReferencia...
     [Dentro de dobrarPorReferencia] Valor alterado (original): 20
 Valor de 'numero' APÓS chamar por REFERÊNCIA: 20
 ----------------------------------------
-Questões
-1. Qual a diferença observada entre as duas versões?
+```
 
-A diferença principal observada na saída é que, após a chamada da função dobrarPorValor, a variável numero no programa principal não tem seu valor alterado, permanecendo 10. Em contraste, após a chamada da função dobrarPorReferencia, o valor da variável numero no programa principal é permanentemente alterado para 20.
+---
 
-2. Por que o valor da variável só se altera na versão por referência?
+### Questões
 
-O valor só se altera na versão por referência por causa da forma como os dados são passados para a função em cada caso.
+**1. Qual a diferença observada entre as duas versões?**
+> A diferença principal observada na saída é que, após a chamada da função `dobrarPorValor`, a variável `numero` no programa principal não tem seu valor alterado, permanecendo `10`. Em contraste, após a chamada da função `dobrarPorReferencia`, o valor da variável `numero` no programa principal é permanentemente alterado para `20`.
 
-Por Valor: Eu te dou uma fotocópia de um documento. Você pode riscar e alterar a fotocópia à vontade, mas o meu documento original continua perfeito.
+**2. Por que o valor da variável só se altera na versão por referência?**
+> O valor só se altera na versão por referência por causa da forma como os dados são passados para a função em cada caso.
+> - **Por Valor:** Eu te dou uma **fotocópia** de um documento. Você pode riscar e alterar a fotocópia à vontade, mas o meu documento original continua perfeito.
+> - **Por Referência:** Eu te dou o **endereço** da minha casa. Você vai até a minha casa e pinta a parede. A parede original foi alterada.
 
-Por Referência: Eu te dou o endereço da minha casa. Você vai até a minha casa e pinta a parede. A parede original foi alterada.
-
-3. Relacione essa diferença com as estratégias de passagem de parâmetros discutidas no Capítulo 9.
-
-A escolha entre passagem por valor e por referência é uma decisão de design que equilibra segurança, eficiência e a necessidade de a função modificar ou não os dados de quem a chamou.
+**3. Relacione essa diferença com as estratégias de passagem de parâmetros discutidas no Capítulo 9.**
+> A escolha entre passagem por valor e por referência é uma decisão de design que equilibra segurança, eficiência e a necessidade de a função modificar ou não os dados de quem a chamou.
