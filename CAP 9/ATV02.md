@@ -18,7 +18,6 @@ import (
 	"time"
 )
 
-// A função 'escrever' imprime um texto 5 vezes, com uma pausa entre cada impressão.
 func escrever(texto string) {
 	for i := 0; i < 5; i++ {
 		fmt.Println(texto, i)
@@ -27,12 +26,7 @@ func escrever(texto string) {
 }
 
 func main() {
-	// A palavra 'go' inicia a função em uma nova corrotina (goroutine).
-	// O programa não espera ela terminar e continua a execução.
 	go escrever("Corrotina")
-
-	// Esta é uma chamada de função normal, síncrona.
-	// O programa principal executa esta função até o fim.
 	escrever("Função normal")
 }
 ```
