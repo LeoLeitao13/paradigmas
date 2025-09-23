@@ -56,7 +56,7 @@ Corrotina 4
 > As mensagens não seguem uma ordem fixa, aparecendo de forma **intercalada**. Isso ocorre porque as duas rotinas rodam ao mesmo tempo (de forma concorrente), disputando a vez de escrever no console.
 
 **2. Por que as mensagens da corrotina e da função normal se intercalam?**
-> A chamada com `go` inicia uma **corrotina** que roda em paralelo, sem travar o programa. A chamada normal é **síncrona** e bloqueia a execução principal. O Go alterna o processamento entre as duas, e a pausa (`time.Sleep`) em uma dá a chance para a outra rodar, causando a intercalação.
+> A chamada com go inicia uma **corrotina** que roda em paralelo, sem travar o programa. A chamada normal é **síncrona** e bloqueia a execução principal. O Go alterna o processamento entre as duas, e a pausa (time.Sleep) em uma dá a chance para a outra rodar, causando a intercalação.
 
-**3. Relacione esse comportamento com a definição de `corrotinas`.**
-> O comportamento é a definição de corrotinas na prática: são rotinas que executam de forma **concorrente**. A palavra `go` cria essa concorrência, e o `time.Sleep` age como um ponto de pausa onde uma rotina "cede" sua vez à outra, caracterizando a **multitarefa cooperativa**.
+**3. Relacione esse comportamento com a definição de corrotinas.**
+> O comportamento é a definição de corrotinas na prática: são rotinas que executam de forma **concorrente**. A palavra go cria essa concorrência, e o time.Sleep age como um ponto de pausa onde uma rotina "cede" sua vez à outra, caracterizando a **multitarefa cooperativa**.
